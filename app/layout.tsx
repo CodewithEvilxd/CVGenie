@@ -6,6 +6,7 @@ import "./globals.css";
 import { Quicksand } from "next/font/google";
 import Navbar from "./components/Navbar";
 import { Providers } from "./provider";
+import { PWAInstallPrompt } from "./components/PWAInstallPrompt";
 
 // ✅ Next.js optimized fonts
 const geistSans = Geist({
@@ -32,8 +33,57 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "CVGenie",
-  description: "Create stunning resumes in minutes!",
+  title: "CVGenie - AI Resume Builder",
+  description: "Create stunning resumes in minutes with AI-powered assistance. Professional resume generator with multiple templates and PDF export.",
+  keywords: ["resume", "cv", "generator", "AI", "job application", "PDF"],
+  authors: [{ name: "CodewithEvilxd" }],
+  creator: "CodewithEvilxd",
+  publisher: "CodewithEvilxd",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  manifest: "/manifest.json",
+  icons: {
+    icon: "/cvGenie-logo.png",
+    shortcut: "/cvGenie-logo.png",
+    apple: "/cvGenie-logo.png",
+  },
+  openGraph: {
+    title: "CVGenie - AI Resume Builder",
+    description: "Create stunning resumes in minutes with AI-powered assistance",
+    url: "https://cv-genie-lx.vercel.app",
+    siteName: "CVGenie",
+    images: [
+      {
+        url: "/create-resume.png",
+        width: 1200,
+        height: 630,
+        alt: "CVGenie Resume Builder",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "CVGenie - AI Resume Builder",
+    description: "Create stunning resumes in minutes with AI-powered assistance",
+    images: ["/create-resume.png"],
+    creator: "@codewithevilxd",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -51,6 +101,7 @@ export default function RootLayout({
         <Providers>
           <Navbar />
           {children}
+          <PWAInstallPrompt />
             <Analytics />
         </Providers>
       </body>
