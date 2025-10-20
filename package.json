@@ -1,0 +1,69 @@
+{
+  "name": "cv-genie",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "npx prisma generate && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "postinstall": "npx prisma generate"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.13.0",
+    "@radix-ui/react-slot": "^1.2.3",
+    "@react-pdf/renderer": "^4.3.0",
+    "@vercel/analytics": "^1.5.0",
+    "axios": "^1.11.0",
+    "bcryptjs": "^3.0.2",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.1",
+    "jspdf-autotable": "^5.0.2",
+    "lucide-react": "^0.526.0",
+    "motion": "^12.23.12",
+    "next": "^15.4.5",
+    "next-auth": "^4.24.11",
+    "nodemailer": "^6.10.1",
+    "postcss-color-function": "^1.2.0",
+    "postcss-preset-env": "^10.2.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
+    "react-icons": "^5.5.0",
+    "react-to-pdf": "^2.0.1",
+    "tailwind-merge": "^3.3.1",
+    "tailwindcss-animate": "^1.0.7"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20.19.9",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "15.4.4",
+    "prisma": "^6.13.0",
+    "tailwindcss": "^4",
+    "tsx": "^4.20.3",
+    "tw-animate-css": "^1.3.6",
+    "typescript": "^5.8.3"
+  },
+  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/komalverma22/cv-Genie.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/komalverma22/cv-Genie/issues"
+  },
+  "homepage": "https://github.com/komalverma22/cv-Genie#readme"
+}

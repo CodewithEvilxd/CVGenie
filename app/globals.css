@@ -1,0 +1,106 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+
+
+/* @custom-variant dark (&:is(.dark *)); */
+
+:root {
+  --background: #ffffff;
+  --foreground: #000000;
+  /* --border:gray; */
+   --border: 1.5px solid #aaaeb8ef;
+   --link-color: rgba(2, 2, 95, 0.655);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #000000;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+:root{
+  --background-color: #ebebe5;
+  --radius: 0.625rem;
+ 
+
+}
+.text{
+  /* font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; */
+  font-family: Arial, Helvetica, sans-serif;
+}
+.heading-font{
+    font-family: "Noto Sans JP", sans-serif;
+}
+.rowdies-light {
+  font-family: "Rowdies", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+.description-font{
+    font-family: "League Spartan", sans-serif !important;
+}
+body{
+  background-color: var(--background-color);
+}
+
+@keyframes sparkle {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(1.2) rotate(0deg);
+  }
+}
+
+.animate-sparkle {
+  animation: sparkle 1.5s infinite ease-in-out;
+}
+
+.mask-image-top {
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 100%);
+  mask-image: linear-gradient(to bottom, transparent 0%, black 15%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.mask-image-gradient {
+  -webkit-mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 85%, transparent 100%);
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+/* Hide scrollbar for all browsers */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+.title-font{
+   font-family: "Playfair Display", serif;
+}
+
+.ignore-capture {
+  visibility: hidden !important;
+}
