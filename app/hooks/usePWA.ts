@@ -1,103 +1,40 @@
-import { useState, useEffect } from 'react';
+'use client';
 
-interface BeforeInstallPromptEvent extends Event {
-  readonly platforms: string[];
-  readonly userChoice: Promise<{
-    outcome: 'accepted' | 'dismissed';
-    platform: string;
-  }>;
-  prompt(): Promise<void>;
-}
+import { useEffect, useState } from 'react';
 
-export const usePWA = () => {
-  const [deferredPrompt, setDeferredPrompt] = useState<BeforeInstallPromptEvent | null>(null);
+export function usePWA() {
   const [isInstallable, setIsInstallable] = useState(false);
-  const [isInstalled, setIsInstalled] = useState(false);
+  const [deferredPrompt, setDeferredPrompt] = useState<any>(null);
 
   useEffect(() => {
-    // Check if app is already installed
-    const checkInstalled = () => {
-      if ('standalone' in window.navigator && (window.navigator as any).standalone) {
-        setIsInstalled(true);
-        return;
-      }
-
-      // Check for iOS Safari
-      if (window.navigator.userAgent.includes('Safari') && !window.navigator.userAgent.includes('Chrome')) {
-        const isInStandaloneMode = window.matchMedia('(display-mode: standalone)').matches;
-        if (isInStandaloneMode) {
-          setIsInstalled(true);
-          return;
-        }
-      }
-
-      setIsInstalled(false);
-    };
-
-    const handleBeforeInstallPrompt = (e: Event) => {
+    const handler = (e: any) => {
       e.preventDefault();
-      setDeferredPrompt(e as BeforeInstallPromptEvent);
+      setDeferredPrompt(e);
       setIsInstallable(true);
     };
 
-    const handleAppInstalled = () => {
-      setIsInstalled(true);
+    window.addEventListener('beforeinstallprompt', handler);
+
+    // Check if already installed
+    if ('standalone' in window.navigator && (window.navigator as any).standalone) {
       setIsInstallable(false);
-      setDeferredPrompt(null);
-    };
-
-    // Register service worker
-    const registerSW = async () => {
-      if ('serviceWorker' in navigator) {
-        try {
-          const registration = await navigator.serviceWorker.register('/sw.js');
-          console.log('Service Worker registered:', registration);
-
-          // Check for updates
-          registration.addEventListener('updatefound', () => {
-            const newWorker = registration.installing;
-            if (newWorker) {
-              newWorker.addEventListener('statechange', () => {
-                if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // New content is available, notify user
-                  console.log('New content is available and will be used when all tabs for this page are closed.');
-                }
-              });
-            }
-          });
-        } catch (error) {
-          console.error('Service Worker registration failed:', error);
-        }
-      }
-    };
-
-    checkInstalled();
-    registerSW();
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    window.addEventListener('appinstalled', handleAppInstalled);
+    }
 
     return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-      window.removeEventListener('appinstalled', handleAppInstalled);
+      window.removeEventListener('beforeinstallprompt', handler);
     };
   }, []);
 
-  const installApp = async () => {
-    if (!deferredPrompt) return false;
-
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-
-    setDeferredPrompt(null);
-    setIsInstallable(false);
-
-    return outcome === 'accepted';
+  const install = async () => {
+    if (deferredPrompt) {
+      deferredPrompt.prompt();
+      const { outcome } = await deferredPrompt.userChoice;
+      setDeferredPrompt(null);
+      setIsInstallable(false);
+      return outcome === 'accepted';
+    }
+    return false;
   };
 
-  return {
-    isInstallable,
-    isInstalled,
-    installApp,
-  };
-};
+  return { isInstallable, install };
+}

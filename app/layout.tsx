@@ -7,6 +7,7 @@ import { Quicksand } from "next/font/google";
 import Navbar from "./components/Navbar";
 import { Providers } from "./provider";
 import { PWAInstallPrompt } from "./components/PWAInstallPrompt";
+import { RegisterSW } from "./components/RegisterSW";
 
 // ✅ Next.js optimized fonts
 const geistSans = Geist({
@@ -102,6 +103,7 @@ export default function RootLayout({
       suppressHydrationWarning
     >
       <body className="antialiased">
+        <RegisterSW />
         <Providers>
           <Navbar />
           {children}

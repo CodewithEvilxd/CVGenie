@@ -1,5 +1,5 @@
 {
-  "name": "CVGenie - AI Resume Builder",
+  "name": "CVGenie",
   "short_name": "CVGenie",
   "description": "Create stunning resumes in minutes with AI-powered assistance",
   "start_url": "/",
@@ -22,44 +22,6 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
-    },
-    {
-      "src": "/cvGenie-logo.png",
-      "sizes": "72x72",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/cvGenie-logo.png",
-      "sizes": "96x96",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/cvGenie-logo.png",
-      "sizes": "128x128",
-      "type": "image/png",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "/cvGenie-logo.png",
-      "sizes": "144x144",
-      "type": "image/png",
-      "purpose": "any maskable"
-    }
-  ],
-  "screenshots": [
-    {
-      "src": "/create-resume.png",
-      "sizes": "1280x720",
-      "type": "image/png",
-      "form_factor": "wide"
-    },
-    {
-      "src": "/resume-blue.jpg",
-      "sizes": "750x1334",
-      "type": "image/jpeg",
-      "form_factor": "narrow"
     }
   ]
 }
