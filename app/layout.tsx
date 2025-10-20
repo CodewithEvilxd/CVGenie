@@ -48,12 +48,12 @@ export const metadata: Metadata = {
   manifest: "/manifest.json",
   icons: {
     icon: [
-      { url: "/cvGenie-logo.png", sizes: "any" },
-      { url: "/cvGenie-logo.png", sizes: "192x192", type: "image/png" },
-      { url: "/cvGenie-logo.png", sizes: "512x512", type: "image/png" },
+      { url: "/logo.png", sizes: "any" },
+      { url: "/logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/logo.png", sizes: "512x512", type: "image/png" },
     ],
-    shortcut: "/cvGenie-logo.png",
-    apple: "/cvGenie-logo.png",
+    shortcut: "/logo.png",
+    apple: "/logo.png",
   },
   openGraph: {
     title: "CVGenie",
