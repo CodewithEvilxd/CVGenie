@@ -183,10 +183,10 @@ export default function Navbar() {
         {/* Mobile Menu Header */}
         <div className="flex justify-between items-center p-4 border-b border-black/30 shadow-lg">
           <div>
-            <img 
-              src="/cvGenie-logo.png" 
-              alt="CVGenie Logo" 
-              className="h-8 w-auto object-contain" 
+            <img
+              src="/cvGenie-logo.png"
+              alt="CVGenie Logo"
+              className="h-8 w-auto object-contain"
             />
           </div>
           <button
@@ -207,7 +207,7 @@ export default function Navbar() {
           <Link 
             href="/" 
             onClick={closeMobileMenu}
-            className="block px-6 py-3 flex items-center gap-1 text-lg font-medium rounded hover:text-black hover:bg-white/25 transition-colors duration-200"
+            className="flex items-center gap-1 px-6 py-3 text-lg font-medium rounded hover:text-black hover:bg-white/25 transition-colors duration-200"
           >
             <img src="/home-heart.png" alt="Home Icon" className="w-4 h-4 mb-0.1" />
             Home
@@ -216,7 +216,7 @@ export default function Navbar() {
             href="/create-resume" 
             onClick={closeMobileMenu}
             prefetch={false}
-            className="block px-6 py-3 text-lg flex gap-1 items-center font-medium hover:text-black hover:bg-white/25 rounded transition-colors duration-200"
+            className="flex gap-1 items-center px-6 py-3 text-lg font-medium hover:text-black hover:bg-white/25 rounded transition-colors duration-200"
           >
             <img src="/edit.png" alt="Create Icon" className="w-4 h-4" />
             Create Resume
@@ -225,7 +225,7 @@ export default function Navbar() {
             <Link 
               href="/signin"
               onClick={closeMobileMenu}
-              className="block px-6 py-3 flex gap-1 items-center text-lg font-medium hover:text-black hover:bg-gray-50 transition-colors duration-200"
+              className="flex gap-1 items-center px-6 py-3 text-lg font-medium hover:text-black hover:bg-gray-50 transition-colors duration-200"
             >
               <img src="/log-in.png" alt="Sign In Icon" className="w-4 h-4" />
               Sign In
@@ -236,7 +236,7 @@ export default function Navbar() {
                 signOut()
                 closeMobileMenu()
               }} 
-              className="block w-full flex gap-1 items-center text-left px-6 py-3 text-lg font-medium font-semibold text-gray-700 hover:bg-red-200/20 text-red-700/60 rounded transition"
+              className="w-full flex gap-1 items-center text-left px-6 py-3 text-lg font-semibold text-red-700/60 hover:bg-red-200/20 rounded transition"
             >
               <img src="/logout.png" alt="Sign Out Icon" className="w-4 h-4" />
               Sign Out
