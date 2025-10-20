@@ -33,7 +33,7 @@ const quicksand = Quicksand({
 });
 
 export const metadata: Metadata = {
-  title: "CVGenie - AI Resume Builder",
+  title: "CVGenie",
   description: "Create stunning resumes in minutes with AI-powered assistance. Professional resume generator with multiple templates and PDF export.",
   keywords: ["resume", "cv", "generator", "AI", "job application", "PDF"],
   authors: [{ name: "CodewithEvilxd" }],
@@ -46,12 +46,16 @@ export const metadata: Metadata = {
   },
   manifest: "/manifest.json",
   icons: {
-    icon: "/cvGenie-logo.png",
+    icon: [
+      { url: "/cvGenie-logo.png", sizes: "any" },
+      { url: "/cvGenie-logo.png", sizes: "192x192", type: "image/png" },
+      { url: "/cvGenie-logo.png", sizes: "512x512", type: "image/png" },
+    ],
     shortcut: "/cvGenie-logo.png",
     apple: "/cvGenie-logo.png",
   },
   openGraph: {
-    title: "CVGenie - AI Resume Builder",
+    title: "CVGenie",
     description: "Create stunning resumes in minutes with AI-powered assistance",
     url: "https://cv-genie-lx.vercel.app",
     siteName: "CVGenie",
@@ -68,7 +72,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "CVGenie - AI Resume Builder",
+    title: "CVGenie",
     description: "Create stunning resumes in minutes with AI-powered assistance",
     images: ["/create-resume.png"],
     creator: "@codewithevilxd",
