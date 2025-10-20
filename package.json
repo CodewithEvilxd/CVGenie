@@ -7,7 +7,15 @@
     "build": "npx prisma generate && next build",
     "start": "next start",
     "lint": "next lint",
-    "postinstall": "npx prisma generate"
+    "lint:fix": "next lint --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "type-check": "tsc --noEmit",
+    "postinstall": "npx prisma generate",
+    "db:generate": "prisma generate",
+    "db:push": "prisma db push",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio"
   },
   "dependencies": {
     "@prisma/client": "^6.13.0",
@@ -49,18 +57,29 @@
     "tw-animate-css": "^1.3.6",
     "typescript": "^5.8.3"
   },
-  "description": "This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).",
+  "description": "CVGenie - Create stunning resumes in minutes with AI-powered assistance. A modern web application built with Next.js for professional resume generation.",
   "main": "index.js",
   "directories": {
     "lib": "lib"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/komalverma22/cv-Genie.git"
+    "url": "git+https://github.com/codewithevilxd/cv-genie.git"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "resume",
+    "cv",
+    "generator",
+    "nextjs",
+    "react",
+    "typescript",
+    "tailwindcss",
+    "ai-powered",
+    "pdf-export",
+    "job-application"
+  ],
+  "author": "CodewithEvilxd",
+  "license": "MIT",
   "type": "module",
   "bugs": {
     "url": "https://github.com/komalverma22/cv-Genie/issues"
