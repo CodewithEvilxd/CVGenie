@@ -13,6 +13,9 @@ const eslintConfig = [
   ...compat.extends("next/core-web-vitals", "next/typescript"),
   {
     rules: {
+      // Fix for Prisma generated files
+      "@typescript-eslint/no-array-constructor": "off",
+
       // Fix for 'this' aliasing errors
       "@typescript-eslint/no-this-alias": "off",
       
