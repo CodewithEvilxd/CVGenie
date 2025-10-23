@@ -40,6 +40,7 @@ export const metadata: Metadata = {
   authors: [{ name: "CodewithEvilxd" }],
   creator: "CodewithEvilxd",
   publisher: "CodewithEvilxd",
+  metadataBase: new URL("https://cv-genie-lx.vercel.app"),
   formatDetection: {
     email: false,
     address: false,

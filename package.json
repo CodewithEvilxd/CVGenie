@@ -33,7 +33,7 @@
     "motion": "^12.23.12",
     "next": "^15.4.5",
     "next-auth": "^4.24.11",
-    "nodemailer": "^7.0.10",
+    "nodemailer": "^6.10.1",
     "postcss-color-function": "^1.2.0",
     "postcss-preset-env": "^10.2.4",
     "react": "19.1.0",
